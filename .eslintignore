@@ -1,0 +1,17 @@
+*.sh
+*.md
+*.woff
+*.ttf
+.vscode
+.idea
+.husky
+.local
+.eslintrc.js
+.prettierrc.js
+.stylelint.config.js
+node_modules
+Dockerfile
+/dist
+/public
+/docs
+/bin
