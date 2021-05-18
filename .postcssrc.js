@@ -1,4 +1,3 @@
-// .postcssrc.js 已弃用，需要使用postcss.config.js
 module.exports = {
   plugins: {
     autoprefixer: {},
