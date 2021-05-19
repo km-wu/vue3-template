@@ -3,7 +3,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true
+    node: true,
   },
   parser: 'vue-eslint-parser',
   /* 优先级低于parse的语法解析配置 */
@@ -13,8 +13,8 @@ module.exports = {
     sourceType: 'module', // Allows for the use of imports
     ecmaFeatures: {
       // tsx: true,
-      jsx: true
-    }
+      jsx: true,
+    },
     // extraFileExtensions: ['.vue']
   },
   /* 扩展配置，加一些插件 */
@@ -23,29 +23,30 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended', // typescript-eslint推荐规则
     'plugin:prettier/recommended', // 使用prettier中的样式规范，且如果使得ESLint会检测prettier的格式问题，同样将格式问题以error的形式抛出. 确保在最后一个.
-    'prettier'
+    'prettier',
   ],
   rules: {
     // http://eslint.cn/docs/rules/
     // https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules
     // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
     // 有些配置 eslint默认规则 和 @typescript-eslint 同时存在规则，因此需要先取消默认规则，让@typescript-eslint接管控制
+    // 有些配置prettier已经校验了，就关闭选项。让vscode少一点负担
 
     /* 是否使用单引号 */
-    quotes: 'off', // 取消规则，以下连在一起的配置，都是默认先取消eslint规则，让@typescript-eslint接管
-    '@typescript-eslint/quotes': ['error', 'single'],
+    // quotes: 'off', // 取消规则，以下连在一起的配置，都是默认先取消eslint规则，让@typescript-eslint接管
+    // '@typescript-eslint/quotes': ['error', 'single'],
 
     /* 是否使用分号 */
-    semi: 'off',
-    '@typescript-eslint/semi': ['error', 'never'],
+    // semi: 'off',
+    // '@typescript-eslint/semi': ['error', 'never'],
 
-    /* 对象是否尾随逗号 */
-    'comma-dangle': 'off',
-    '@typescript-eslint/comma-dangle': ['error', 'never'],
+    /* 对象是否尾随逗号, prettier 已经实现 */
+    // 'comma-dangle': 'off',
+    // '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
 
     /* 函数名和花括号之间是否加空格, 因为prettier是默认不加空格的，且不可该配置，所以eslint只好关闭这个规则，或者和prettier禁止空格 */
-    'space-before-function-paren': 'off',
-    '@typescript-eslint/space-before-function-paren': 'off',
+    // 'space-before-function-paren': 'off',
+    // '@typescript-eslint/space-before-function-paren': 'off',
 
     /* 生成环境不允许加console.log 和 debugger 其实本项目打包构建已经去除console.log、debugger了。这里也就无所谓了 */
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -85,15 +86,15 @@ module.exports = {
       'error',
       {
         argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_'
-      }
+        varsIgnorePattern: '^_',
+      },
     ],
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
         argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_'
-      }
+        varsIgnorePattern: '^_',
+      },
     ],
 
     /* 要求自定义事件需要使用kebab-case格式 */
@@ -104,8 +105,8 @@ module.exports = {
       'error',
       {
         singleline: 'never',
-        multiline: 'always'
-      }
+        multiline: 'always',
+      },
     ],
 
     /* 配置vue中标签允许多少个属性同一行（多少个之后需要强制换行）和prettier的printWidth设置会有冲突。*/
@@ -134,7 +135,7 @@ module.exports = {
     'vue/require-default-prop': 'off',
 
     /* 控制标签没有内容的情况下是否需要自闭合 */
-    'vue/html-self-closing': 'off'
+    'vue/html-self-closing': 'off',
     // 'vue/html-self-closing': [
     //   'error',
     //   {
@@ -162,5 +163,5 @@ module.exports = {
     // 'vue/attributes-order': 'off',
     // 'vue/one-component-per-file': 'off',
     // 'vue/multiline-html-element-content-newline': 'off',
-  }
+  },
 }

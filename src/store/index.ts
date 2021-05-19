@@ -12,10 +12,10 @@ const modules = Object.keys(fileModules).reduce<ModuleTree<Record<string, unknow
 
 export default createStore({
   state: {
-    sss: 1
+    sss: 1,
   },
   mutations: {},
   actions: {},
   getters: {},
-  modules
+  modules,
 })

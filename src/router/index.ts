@@ -3,7 +3,7 @@ import { createRouter, createWebHistory, RouteRecordRaw, RouteComponent } from '
 const fileRoutes = import.meta.globEager('./routes/**/*.ts')
 const routesArray = Object.keys(fileRoutes).reduce<RouteRecordRaw[]>(
   (module, key) => [...module, ...fileRoutes[key].default],
-  []
+  [],
 )
 
 const routes: Array<RouteRecordRaw> = [
@@ -12,9 +12,9 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     meta: {
       title: '首页',
-      keepAlive: false
+      keepAlive: false,
     },
-    component: (): RouteComponent => import('../views/Home/index.vue')
+    component: (): RouteComponent => import('../views/Home/index.vue'),
   },
 
   ...routesArray,
@@ -22,13 +22,13 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/:pathMatch(.*)*',
     name: '404',
-    component: (): RouteComponent => import('../views/404.vue')
-  }
+    component: (): RouteComponent => import('../views/404.vue'),
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
 })
 
 router.beforeEach((to, from, next) => {

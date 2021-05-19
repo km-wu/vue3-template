@@ -6,10 +6,10 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Test',
     meta: {
       title: '测试页面',
-      keepAlive: false
+      keepAlive: false,
     },
-    component: (): RouteComponent => import('@/views/Test.vue')
-  }
+    component: (): RouteComponent => import('@/views/Test.vue'),
+  },
 ]
 
 export default routes

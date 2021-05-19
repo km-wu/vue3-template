@@ -9,7 +9,7 @@ module.exports = {
   singleQuote: true, // 是否使用单引号
   quoteProps: 'as-needed', // 仅在需要时在对象属性周围添加引号
   jsxSingleQuote: false, // 在JSX中使用单引号而不是双引号
-  trailingComma: 'none', // 对象最末尾元素跟随的逗号
+  trailingComma: 'all', // 多行对象最末尾元素跟随的逗号
   bracketSpacing: true, // 是否在对象属性添加空格
   jsxBracketSameLine: false, // 将 > 多行 JSX 元素放在最后一行的末尾，而不是单独放在下一行（不适用于自闭元素）
   arrowParens: 'always', // 箭头函数，只有一个参数的时候也需要括号
@@ -28,5 +28,5 @@ module.exports = {
   //     "semi": true
   //   }
   // },
-  overrides: [{ files: '*.html', parser: 'html' }] // 这里是配置让html用回html解析器。
+  overrides: [{ files: '*.html', parser: 'html' }], // 这里是配置让html用回html解析器。
 }
