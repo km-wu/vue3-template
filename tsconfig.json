@@ -13,10 +13,8 @@
     "typeRoots": ["./node_modules/@types/", "./src/types"],
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
+      "@/*": ["src/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "exclude": ["node_modules"]

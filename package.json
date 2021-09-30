@@ -60,6 +60,7 @@
     "vite": "^2.3.0",
     "vite-plugin-compression": "^0.2.5",
     "vite-plugin-style-import": "^0.10.0",
+    "vite-plugin-svg-icons": "^1.0.5",
     "vue-tsc": "^0.0.24"
   },
   "commitlint": {

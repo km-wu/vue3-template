@@ -6,6 +6,7 @@
   <router-link to="/">
     <van-button size="mini">返回首页</van-button>
   </router-link>
+  <svg-icon name="wechat"></svg-icon>
 </template>
 
 <script lang="ts" setup="props">
